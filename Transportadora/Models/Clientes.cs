@@ -13,6 +13,7 @@ namespace Transportadora.Models
         {
             // Estou a colocar dados na Lista de projetos de cada cliente
             ListaEncomendas = new HashSet<Encomendas>();
+
         }
 
         ///<summary>
@@ -88,11 +89,5 @@ namespace Transportadora.Models
         /// </summary>
         [Display(Name = "Lista de Encomendas")]
         public ICollection <Encomendas> ListaEncomendas { get; set; }
-
-        /// <summary>
-        /// Lista de Envios associados a um cliente
-        /// </summary>
-        [Display(Name = "Lista de Envios")]
-        public ICollection<Envios> ListaEnvios { get; set; }
     }
 }
