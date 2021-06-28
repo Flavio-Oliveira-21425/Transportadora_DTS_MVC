@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    var nome = "";
+    if (SignInManager.IsSignedIn(User))
+    {
+        var splitName = User.Claims.Where(cl => cl.Type.Equals("Nome", StringComparison.OrdinalIgnoreCase)).FirstOrDefault().Value.Split(' ');
+
+        nome = (splitName.Length == 1) ? "" : String.Concat(splitName[0], ' ', splitName[splitName.Length - 1]);
+    }
+}
+
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @if (User.IsInRole("cliente"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-action="Encomendas" asp-controller="Clientes" asp-route-id="@UserManager.GetUserId(User)" title="Manage">Olá @nome!</a>
+            </li>
+        }
+
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-action="Encomendas" asp-controller="Funcionarios" asp-route-id="@UserManager.GetUserId(User)" title="Manage">Olá @nome!</a>
+            </li>
+        }
+
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    }
+</ul>

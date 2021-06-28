@@ -1,0 +1,190 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/ico" href="/images/icon.png">
+</div>
+
+
+
+@if (!User.Identity.IsAuthenticated)
+{
+
+    <body>
+        <!--========================== PÁGINA INICIAL ============================-->
+        <!--==========================
+            Hero Section
+          ============================-->
+        <section id="hero">
+            <div class="hero-container">
+                <h1 class="display-4">Bem vindo</h1>
+                <h2 class="display-4">Registe-se para poder ter acesso as encomendas e ao seu estado</h2>
+            </div>
+        </section>
+
+        <!--==========================
+            About Us Section
+        ============================-->
+        <section id="about">
+            <div class="container">
+                <div class="row about-container">
+
+                    <div class="col-lg-6 content order-lg-1 order-2">
+                        <h2 class="title">Sobre nós:</h2>
+                        <p>
+                            Somos alunos de Engenharia Informática no Instituto Politécnico de Tomar.
+                        <br />
+                            Foi nos proposta a criação deste trabalho no ambito de Teconlogias da Internet II.
+                        </p>
+
+                        <div class="icon-box wow fadeInUp">
+                            <div class="icon"><i class="fa fa-map-marker" style="font-size:24px"></i></div>
+                            <h4 class="title">Morada:</h4>
+                            <p class="description">Rua do Instituto Politécnico de Tomar 2300 Tomar</p>
+                        </div>
+
+                        <div class="icon-box wow fadeInUp">
+                            <div class="icon"><i class="fa fa-phone" style="font-size:24px"></i></div>
+                            <h4 class="title">Contacto:</h4>
+                            <p class="description">249000000</p>
+                        </div>
+
+                        <div class="icon-box wow fadeInUp">
+                            <div class="icon"><i class="fa fa-facebook-square" style="font-size:24px"></i></div>
+                            <h4 class="title">Facebook</h4>
+                            <p class="description">TransportadoraDTS</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 background order-lg-2 order-1 wow fadeInRight">
+                        <img src="/imagens/logo.png" width="600" height="250">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!--==========================
+            Team Section
+        ============================-->
+        <section id="team">
+            <div class="container wow fadeInUp">
+                <div class="section-header">
+                    <h3 class="section-title">Equipa</h3>
+                    <p class="section-description">A nossa equipa de trabalho</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="member">
+                            <div class="pic">
+                                <img src="/imagens/alunos/daniel.jpg" alt="">
+                            </div>
+                            <h4>Daniel Pedro nº 20164</h4>
+                            <span>Web developer/designer</span>
+                            <div class="social">
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href=""><i class="fa fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="member">
+                            <div class="pic">
+                                <img src="/imagens/alunos/flavio.jpg" alt="">
+                            </div>
+                            <h4>Flávio Oliveira nº 21425</h4>
+                            <span>Web developer/designer</span>
+                            <div class="social">
+                                <a href="https://www.facebook.com/flavio.olivera.79"><i class="fa fa-facebook"></i></a>
+                                <a href="https://github.com/Flavio-Oliveira-21425"><i class="fa fa-github"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="member">
+                            <div class="pic">
+                                <img src="/imagens/professores/jose_casemiro.jpg" alt="">
+                            </div>
+                            <h4>José Casimiro Pereira</h4>
+                            <span>Professor</span>
+                            <div class="social">
+                                <a href="https://github.com/jcnpereira"><i class="fa fa-github"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+}
+else if (User.IsInRole("cliente"))
+{
+
+    <!--========================== CLIENTE ============================-->
+
+    <section id="hero-cliente">
+        <div class="hero-container-cliente">
+            <h1>Bem vindo a sua pagina pessoal</h1>
+            <h2>aqui tem acesso a toda a informação relativamente a sua encomenda ou encomendas</h2>
+        </div>
+    </section>
+
+
+    <!--==========================
+        Contacts
+    ============================-->
+    <section id="about">
+        <div class="container">
+            <div class="row about-container">
+
+                <div class="col-lg-6 content order-lg-1 order-2">
+                    <h2 class="title">Contactos:</h2>
+
+                    <div class="icon-box wow fadeInUp">
+                        <div class="icon"><i class="fa fa-map-marker" style="font-size:24px"></i></div>
+                        <h4 class="title"><a href="">Morada:</a></h4>
+                        <p class="description">Rua do Instituto Politécnico de Tomar 2300 Tomar</p>
+                    </div>
+
+                    <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon"><i class="fa fa-phone" style="font-size:24px"></i></div>
+                        <h4 class="title"><a href="">Contacto:</a></h4>
+                        <p class="description">249000000</p>
+                    </div>
+
+                    <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon"><i class="fa fa-facebook-square" style="font-size:24px"></i></div>
+                        <h4 class="title"><a href="">Facebook</a></h4>
+                        <p class="description">TransportadoraDTS</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+}
+else 
+{
+    <!--========================== FUNCIONARIO ============================-->
+
+    <section id="hero-func">
+        <div class="hero-container-func">
+            <h1>Bem vindo</h1>
+            <h2>Já pode verificar a informção acerca da Encomenda, bom trabalho!</h2>
+</div>
+    </section>
+
+}
