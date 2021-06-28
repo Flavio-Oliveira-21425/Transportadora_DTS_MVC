@@ -12,9 +12,6 @@ namespace Transportadora.Models
         {
             // Estou a colocar dados na Lista de projetos de cada Funcionario
             ListaEncomendas = new HashSet<Encomendas>();
-
-            // Estou a colocar dados na Lista de formulários de cada Funcionario
-            //ListaEnvios = new HashSet<Envios>();
         }
         ///<summary>
         ///Id do Funcionario
@@ -93,10 +90,5 @@ namespace Transportadora.Models
         /// </summary>
         [Display(Name = "Lista de Encomendas")]
         public ICollection <Encomendas> ListaEncomendas { get; set; }
-        ///<summary>
-        ///Lista de Encomendas do Funcionaro
-        /// </summary>
-        [Display(Name = "Lista de Envios")]
-        public ICollection<Encomendas> ListaEnvios { get; set; }
     }
 }

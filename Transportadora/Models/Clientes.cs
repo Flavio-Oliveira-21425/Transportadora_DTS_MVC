@@ -13,9 +13,6 @@ namespace Transportadora.Models
         {
             // Estou a colocar dados na Lista de projetos de cada cliente
             ListaEncomendas = new HashSet<Encomendas>();
-
-            // Estou a colocar dados na Lista de formulários de cada cliente
-            ListaEnvios = new HashSet<Envios>();
         }
 
         ///<summary>
