@@ -1,0 +1,69 @@
+﻿@page
+@model RegisterfModel
+@{
+    ViewData["Title"] = "Criação de Conta de Funcionário";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <div class="row">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Dados de funcionário.</h4>
+                <hr />
+                <div class="form-group">
+                    <label asp-for="Input.Funcionario.Nome"></label>
+                    <input asp-for="Input.Funcionario.Nome" class="form-control" />
+                    <span asp-validation-for="Input.Funcionario.Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Funcionario.Cargo"></label>
+                    <input asp-for="Input.Funcionario.Cargo" class="form-control" />
+                    <span asp-validation-for="Input.Funcionario.Cargo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Funcionario.Contacto"></label>
+                    <input asp-for="Input.Funcionario.Contacto" class="form-control" />
+                    <span asp-validation-for="Input.Funcionario.Contacto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Funcionario.Morada"></label>
+                    <input asp-for="Input.Funcionario.Morada" class="form-control" />
+                    <span asp-validation-for="Input.Funcionario.Morada" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Funcionario.CodPostal"></label>
+                    <input asp-for="Input.Funcionario.CodPostal" class="form-control" />
+                    <span asp-validation-for="Input.Funcionario.CodPostal" class="text-danger"></span>
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <h4>Dados de conta.</h4>
+                <hr />
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-right">
+            <button type="submit" class="btn btn-primary">Criar funcionário</button>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
