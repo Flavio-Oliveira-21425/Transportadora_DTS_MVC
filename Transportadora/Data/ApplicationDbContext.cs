@@ -26,7 +26,6 @@ namespace Transportadora.Data
         // adicionar as 'tabelas' à BD
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Encomendas> Encomendas { get; set; }
-        public DbSet<Envios> Envios { get; set; }
         public DbSet<Funcionarios> Funcionarios { get; set; }
 
 
